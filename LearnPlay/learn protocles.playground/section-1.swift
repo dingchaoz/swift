@@ -54,14 +54,28 @@ class Dog: Animal, Speaker {
     }
 }
 
+// Declare a var named speaker in Speaker class
 var speaker: Speaker
+
+// Pass Ray() to the var speaker
 speaker = Ray()
+
+// Call Speak() method, since the var is declared as speaker, we can only call methods
+// on speaker that exists in Speaker protocol
 speaker.Speak()
+
+//WriteTutorial() is not in Speaker protocol
+// so we have to cast speaker as Ray to call it, otherwise direct call will get error
 (speaker as Ray).WriteTutorial()
+
+// Pass Ray() to the var speaker
 speaker = Viki()
 speaker.Speak()
 
+// Telljoke() is optional method, so we check if it exists before call it
 speaker.TellJoke?()
 speaker = Dog()
+
+// Telljoke() does not exist in Dog(), so returns nill
 speaker.TellJoke?()
 
